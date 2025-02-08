@@ -8,19 +8,24 @@ menu you have to create category scripts **categories for the F4 Menu job slots*
 looks like this:(https://i.gyazo.com/65b1717088f78df5d99668f0e4bdc4d7.png) and here is a short demo: (https://medal.tv/games/garrys-mod/clips/jEyfSf7o1Q8DOxTgq?invite=cr-MSxrb00sMTI4NzYwNzQs)
 
 02/08/2025 --- Just wanted to show you guys a little something here: 
+
 **Issue:** All ranks including the user was spawning in with items like physgun, grav gun, and tool gun.
-**Solution:** Added this line of script to the file **settings.lua in darkrpmodifications:** 
--- The list of weapons admins spawn with, in addition to the default weapons, a job's weapons and GM.Config.AdminsCopWeapons.
-GM.Config.AdminWeapons = {
+
+**Solution:** Edited these lines of script to the file **settings.lua in darkrpmodifications:** 
+
+    -- The list of weapons admins spawn with, in addition to the default weapons, a job's weapons and GM.Config.AdminsCopWeapons.
+    GM.Config.AdminWeapons = {
     "weapon_keypadchecker",
     "weapon_physcannon",
     "weapon_physgun",
     "gmod_tool",
-}                   This allows for when someone is the rank of Admin+ to have these weapons.
+    }                   This allows for when someone is the rank of Admin+ to have these weapons.
 
-Here is where I changed the **"default class"** to have only these added to their inventories and takes out the physgun, gravgun, tool gun, from their inventories. 
--- The list of weapons people spawn with.
-GM.Config.DefaultWeapons = {
+Here is where I changed the **"default class"** (same location as above just ctrl+f) to have only these added to their inventories and takes out the physgun, gravgun, tool gun, from their inventories. 
+
+    -- The list of weapons people spawn with.
+    GM.Config.DefaultWeapons = {
     "keys",
     "pocket",
-}                         This fixed the issue once this was edited where keys is, the admin tools where there too so had to remove them! Hope this helps!
+    }                       This fixed the issue once this was edited where keys is, the admin tools were there too 
+                            so had to remove them! Hope this helps!
